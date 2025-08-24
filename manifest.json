@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Tweet Folder Bookmarker",
+  "version": "1.2.0",
+  "description": "Save bookmarked tweets into custom folders (with default folder + folder manager).",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://twitter.com/*", "*://x.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "options_page": "options.html"
+}
